@@ -35,9 +35,9 @@ func TestCoursesToTake(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got := coursesToTake(tt.input, tt.n)
+			// got := coursesToTake(tt.input, tt.n) //brute Force problem
+			got := findOrder(tt.input, tt.n) //Optimized solution using topological sorting
 			assert.Equal(t, tt.want, got)
 		})
 	}
-
 }
